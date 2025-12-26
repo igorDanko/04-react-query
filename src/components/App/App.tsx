@@ -52,7 +52,6 @@ export default function App() {
         {isError && <ErrorMessage />}
         {!isLoading && !isError && movies.length > 0 && (
           <>
-            <MovieGrid movies={movies} onSelect={handleSelectMovie} />
             {totalPages > 1 && (
               <ReactPaginate
                 pageCount={totalPages}
@@ -66,6 +65,7 @@ export default function App() {
                 previousLabel="←"
               />
             )}
+            <MovieGrid movies={movies} onSelect={handleSelectMovie} />
           </>
         )}
       </main>
